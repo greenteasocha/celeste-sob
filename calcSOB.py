@@ -17,9 +17,8 @@ def read_file(filename: str) -> List[Chapter]:
     with open(filename, "r") as f:
         chapters = f.readlines()
         for chapter in chapters:
-            name, record = chapter.strip().split(",")
+            name, record, *_ = chapter.strip().split(",")
             ret.append(Chapter(name, record))
-
     return ret
 
 
